@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Админ-панель</title>
+    <title>Admin panel</title>
 
     <link href="/admin/Assets/semantic/semantic.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/admin/Assets/semantic/components/dropdown.min.css">
