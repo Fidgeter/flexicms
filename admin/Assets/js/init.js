@@ -24,7 +24,7 @@ $(document)
 $(function() {
     var group = $("ol.edit-menu").sortable({
         group: 'edit-menu',
-        handle: 'i.icon-cursor-move',
+        handle: 'i.move',
         onDragStart: function ($item, container, _super) {
             // Duplicate items of the no drop area
             if(!container.options.drop)
