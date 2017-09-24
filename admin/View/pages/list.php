@@ -24,9 +24,9 @@
                 <tbody>
                 <?php foreach($pages as $page): ?>
                 <tr>
-                    <th scope="row">
+                    <td scope="row">
                         <?= $page->id ?>
-                    </th>
+                    </td>
                     <td>
                         <a href="/admin/pages/edit/<?= $page->id ?>">
                             <?= $page->title ?>
