@@ -24,9 +24,9 @@
                 <tbody>
                 <?php foreach($posts as $post): ?>
                     <tr>
-                        <th scope="row">
+                        <td scope="row">
                             <?= $post->id ?>
-                        </th>
+                        </td>
                         <td>
                             <a href="/admin/posts/edit/<?= $post->id ?>">
                                 <?= $post->title ?>
