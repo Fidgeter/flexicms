@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/admin/Assets/semantic/components/segment.min.css">
     <link rel="stylesheet" href="/admin/Assets/semantic/components/sidebar.min.css">
 
-
     <!-- Custom styles for this template -->
     <link href="/admin/Assets/css/dashboard.css" rel="stylesheet">
 
@@ -33,25 +32,15 @@
             <div href="/admin/" class="header item logo-item">
                 <img class="logo" src="/admin/Assets/images/logo.png">
             </div>
-            <a href="/admin/" class="item">
-                <i class="icon-speedometer icons"></i>
-                <?= $lang->dashboardMenu['home'] ?>
-            </a>
-            <a href="/admin/pages/" class="item">
-                <i class="icon-doc icons"></i>
-                <?= $lang->dashboardMenu['pages'] ?>
-            </a>
-            <a href="/admin/posts/" class="item">
-                <i class="icon-pencil icons"></i>
-                <?= $lang->dashboardMenu['posts'] ?>
-            </a>
-            <a href="/admin/settings/general/" class="item">
-                <i class="icon-equalizer icons"></i>
-                <?= $lang->dashboardMenu['settings'] ?>
-            </a>
+            <?php foreach (Customize::getInstance()->getAdminMenuItems() as $key => $item): ?>
+                <a class="item" href="<?= $item['urlPath'] ?>">
+                    <i class="<?= $item['classIcon'] ?>"></i>
+                    <?= $lang->dashboardMenu[$key] ?>
+                </a>
+            <?php endforeach; ?>
 
             <a href="/admin/logout/" class="ui right floated item" tabindex="0">
-                <i class="icon-logout icons"></i> Logout
+                <i class="sign out icon"></i> Logout
             </a>
         </div>
     </div>
