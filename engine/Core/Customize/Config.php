@@ -13,22 +13,22 @@ class Config
     protected $config = [
         'dashboardMenu' => [
             'home' => [
-                'classIcon' => 'icon-speedometer icons',
+                'classIcon' => 'dashboard icon',
                 'urlPath'   => '/admin/',
                 'title'     => 'Home'
             ],
             'pages' => [
-                'classIcon' => 'icon-doc icons',
+                'classIcon' => 'file outline icon',
                 'urlPath'   => '/admin/pages/',
                 'title'     => 'Pages'
             ],
             'posts' => [
-                'classIcon' => 'icon-pencil icons',
+                'classIcon' => 'write icon',
                 'urlPath'   => '/admin/posts/',
                 'title'     => 'Posts'
             ],
             'settings' => [
-                'classIcon' => 'icon-equalizer icons',
+                'classIcon' => 'setting icon',
                 'urlPath'   => '/admin/settings/general/',
                 'title'     => 'Settings'
             ]
