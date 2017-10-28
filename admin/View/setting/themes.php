@@ -29,7 +29,7 @@
                             <div class="content">
                                 <span class="header"><?= $theme->name ?></span>
                                 <div class="meta">
-                                    <span>Version: <?= $theme->version ?></span> | <span><a href="<?= $theme->site ?>" target="_blank"><?= $theme->author ?></a></span>
+                                    <span>Version: <?= $theme->version ?></span>| <span><a href="<?= $theme->site ?>" target="_blank"><?= $theme->author ?></a></span>
                                 </div>
                                 <div class="description">
                                     <?= $theme->description ?>
