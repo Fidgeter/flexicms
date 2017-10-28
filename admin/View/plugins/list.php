@@ -20,6 +20,7 @@
                             <th></th>
                             <th>Plugin</th>
                             <th>Description</th>
+                            <th>Author</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -32,7 +33,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <?= $plugin['name'] ?><br>
+                                    <?= $plugin['name'] ?> <?= $plugin['version'] ?><br>
                                     <?php if ($plugin['is_install']): ?>
                                         <span class="disabled" style="color: #909090">
                                             Installed
@@ -45,6 +46,8 @@
                                 </td>
                                 <td>
                                     <?= $plugin['description'] ?>
+                                </td>
+                                <td><a class="item" href="<?= $plugin['site'] ?>" target="_blank"><?= $plugin['author'] ?></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

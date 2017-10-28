@@ -16,6 +16,8 @@ class Plugin extends \Engine\Plugin
             'name'        => 'Plugin Demo',
             'description' => 'Demonstration plugin.',
             'author'      => 'Artem Melnik',
+            'version'      => '1.0',
+            'site'	=> 'https://vk.com/dev_start',
             'icon'        => 'icon-leaf'
         ];
     }
