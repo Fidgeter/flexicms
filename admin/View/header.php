@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/admin/Assets/semantic/components/segment.min.css">
     <link rel="stylesheet" href="/admin/Assets/semantic/components/sidebar.min.css">
 
+
     <!-- Custom styles for this template -->
     <link href="/admin/Assets/css/dashboard.css" rel="stylesheet">
 
@@ -35,12 +36,12 @@
             <?php foreach (Customize::getInstance()->getAdminMenuItems() as $key => $item): ?>
                 <a class="item" href="<?= $item['urlPath'] ?>">
                     <i class="<?= $item['classIcon'] ?>"></i>
-                    <?= $lang->dashboardMenu[$key] ?>
+                    <?php Lang::_e('dashboardMenu', $key) ?>
                 </a>
             <?php endforeach; ?>
 
             <a href="/admin/logout/" class="ui right floated item" tabindex="0">
-                <i class="sign out icon"></i> Logout
+                <i class="icon-logout icons"></i> Logout
             </a>
         </div>
     </div>

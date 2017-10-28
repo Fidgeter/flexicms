@@ -1,18 +1,22 @@
 {
-    "name": "qwib/cms.loc",
-    "authors": [
-        {
-            "name": "Artem Melnik",
-            "email": "zzema666@gmail.com"
-        }
-    ],
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Engine\\": "engine",
-            "Cms\\": "cms",
-            "Admin\\": "admin",
-            "Engine\\DI\\": "engine/DI"
-        }
+  "name": "qwib/cms.loc",
+  "authors": [
+    {
+      "name": "Artem Melnik",
+      "email": "zzema666@gmail.com"
     }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Engine\\": "engine",
+      "Cms\\": "cms",
+      "Admin\\": "admin",
+      "Plugin\\": "content/plugins"
+    },
+    "files": [
+      "engine/defines.php",
+      "engine/function.php"
+    ]
+  }
 }

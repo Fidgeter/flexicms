@@ -58,9 +58,6 @@ class View
             );
         }
 
-        // Add language in this template
-        $data['lang'] = $this->di->get('language');
-
         $this->theme->setData($data);
 
         extract($data);
@@ -86,7 +83,13 @@ class View
     private function getTemplatePath($template, $env = null)
     {
         if ($env === 'Cms') {
-            return ROOT_DIR . '/content/themes/default/' . $template . '.php';
+            $theme = \Setting::get('active_theme');
+
+            if ($theme == '') {
+                $theme = \Engine\Core\Config\Config::item('defaultTheme');
+            }
+
+            return ROOT_DIR . '/content/themes/' . $theme . '/' . $template . '.php';
         }
 
         return path('view') . '/' . $template . '.php';
