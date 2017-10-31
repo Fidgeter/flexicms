@@ -11,7 +11,7 @@ class Component
      */
     public static function load($name, $data = [])
     {
-        $templateFile = ROOT_DIR . '/content/themes/default/' . $name . '.php';
+        $templateFile = ROOT_DIR . '/content/themes/' . Setting::get('active_theme') . '/' . $name . '.php';
 
         if (ENV == 'Admin') {
             $templateFile = path('view') . '/' . $name . '.php';
