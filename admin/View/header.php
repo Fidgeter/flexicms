@@ -40,9 +40,15 @@
                 </a>
             <?php endforeach; ?>
 
-            <a href="/admin/logout/" class="ui right floated item" tabindex="0">
-                <i class="icon-logout icons"></i> <?php Lang::_e('dashboardMenu', 'logout') ?>
-            </a>
+            <div class="right menu">
+                <a href="/" class="ui item"  target="_blank">
+                    <i class="browser icon"></i> <?php Lang::_e('dashboardMenu', 'onsite') ?>
+                </a>
+
+                <a href="/admin/logout/" class="ui item" tabindex="0">
+                    <i class="sign out icon"></i> <?php Lang::_e('dashboardMenu', 'logout') ?>
+                </a>
+            </div>
         </div>
     </div>
 </header>
