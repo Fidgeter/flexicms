@@ -4,10 +4,10 @@ Flexible site management system
 # Installation
 1. We clone the repository.
 2. Extract the files to the root directory of the site.
-3. Create a database and import into it dump cms.sql
-4. In the files (/cms/Config/database.php, /admin/Config/database.php) we specify the connection parameters.
+3. In the files (/cms/Config/database.php, /admin/Config/database.php) we specify the connection parameters.
+4. Type yousite.com/install in the browser and follow the instructions.
 
-Example /cms/Config/database.php
+Example /cms/Config/database.php and /admin/Config/database.php
 ```
 <?php
 return [
