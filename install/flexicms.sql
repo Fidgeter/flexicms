@@ -154,7 +154,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
-(1, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'admin', 'ce47a9994ac4a1404b7435903dc3cbfd', '2017-11-05 16:18:59');
+(1, 'admin@admin.test', 'b59c67bf196a4758191e42f76670ceba', 'admin', 'ce47a9994ac4a1404b7435903dc3cbfd', '2017-11-05 16:18:59');
 
 --
 -- Индексы сохранённых таблиц
