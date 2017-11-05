@@ -9,4 +9,4 @@ Flexible site management system
 # Site management
 
 1. Type in the browser /admin
-2. Insert login ad password: Admin
+2. Insert login: admin@admin.com and password: 1111
