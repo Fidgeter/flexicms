@@ -8,13 +8,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+-- База данных: `cms`
+--
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
+CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `menu`
+--
+
+INSERT INTO `menu` (`id`, `name`) VALUES
+(1, 'Header');
 
 -- --------------------------------------------------------
 
@@ -22,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
 -- Структура таблицы `menu_item`
 --
 
-CREATE TABLE IF NOT EXISTS `menu_item` (
+CREATE TABLE `menu_item` (
   `id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -31,13 +44,21 @@ CREATE TABLE IF NOT EXISTS `menu_item` (
   `link` varchar(255) NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `menu_item`
+--
+
+INSERT INTO `menu_item` (`id`, `menu_id`, `name`, `parent`, `position`, `link`) VALUES
+(1, 1, 'About Us', 0, 999, '/page/about'),
+(2, 1, 'Contact', 0, 999, '/page/contact');
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `page`
 --
 
-CREATE TABLE IF NOT EXISTS `page` (
+CREATE TABLE `page` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
@@ -47,13 +68,21 @@ CREATE TABLE IF NOT EXISTS `page` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `page`
+--
+
+INSERT INTO `page` (`id`, `title`, `content`, `segment`, `type`, `status`, `date`) VALUES
+(1, 'About', '<p>​</p>', 'about', 'about', 'publish', '2017-10-29 14:08:55'),
+(2, 'Contact', '<p>​</p>', 'contact', 'about', 'publish', '2017-10-30 15:15:54');
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `plugin`
 --
 
-CREATE TABLE IF NOT EXISTS `plugin` (
+CREATE TABLE `plugin` (
   `id` int(11) NOT NULL,
   `directory` varchar(255) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '0'
@@ -65,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `plugin` (
 -- Структура таблицы `post`
 --
 
-CREATE TABLE IF NOT EXISTS `post` (
+CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
@@ -73,19 +102,26 @@ CREATE TABLE IF NOT EXISTS `post` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`, `status`, `date`) VALUES
+(1, 'Test post title', '<p>Test content​</p>', 'publish', '2017-10-30 15:17:34');
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `setting`
 --
 
-CREATE TABLE IF NOT EXISTS `setting` (
+CREATE TABLE `setting` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `key_field` varchar(100) NOT NULL,
   `value` varchar(255) NOT NULL,
   `section` varchar(155) NOT NULL DEFAULT 'general'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `setting`
@@ -95,7 +131,7 @@ INSERT INTO `setting` (`id`, `name`, `key_field`, `value`, `section`) VALUES
 (1, 'Name site', 'name_site', 'Start site on FlexiCMS', 'general'),
 (2, 'Description', 'description', 'Example description', 'general'),
 (3, 'Admin email', 'admin_email', 'admin@admin.test', 'general'),
-(4, 'Language', 'language', 'english', 'general'),
+(4, 'Language', 'language', 'russian', 'general'),
 (5, 'Active theme', 'active_theme', 'default', 'theme');
 
 -- --------------------------------------------------------
@@ -104,7 +140,7 @@ INSERT INTO `setting` (`id`, `name`, `key_field`, `value`, `section`) VALUES
 -- Структура таблицы `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(32) NOT NULL,
@@ -112,6 +148,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `hash` varchar(32) NOT NULL,
   `date_reg` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
+(1, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'admin', 'ce47a9994ac4a1404b7435903dc3cbfd', '2017-11-05 16:18:59');
 
 --
 -- Индексы сохранённых таблиц
@@ -169,17 +212,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `menu_item`
 --
 ALTER TABLE `menu_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `plugin`
 --
@@ -189,17 +232,17 @@ ALTER TABLE `plugin`
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
